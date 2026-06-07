@@ -85,38 +85,47 @@ export default function Problems() {
           const isOpen = openCard === problem.title;
 
           return (
-            <button
+            <div
               key={problem.title}
-              onClick={() => setOpenCard(isOpen ? null : problem.title)}
-              className="min-h-[260px] rounded-3xl border border-white/70 bg-white/70 p-6 text-left shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-lg"
+              className="rounded-3xl border border-white/70 bg-white/70 p-6 shadow-sm backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-lg"
             >
-              {!isOpen ? (
-                <>
-                  <div className="text-4xl">{problem.emoji}</div>
-                  <h3 className="mt-4 text-xl font-bold">{problem.title}</h3>
-                  <p className="mt-2 text-slate-600">{problem.text}</p>
-                  <p className="mt-6 text-sm font-medium text-purple-600">
-                    Voir comment Klero aide →
-                  </p>
-                </>
-              ) : (
-                <>
-                  <h3 className="text-xl font-bold text-purple-700">
+              <div
+                onClick={() =>
+                  setOpenCard(isOpen ? null : problem.title)
+                }
+                className="cursor-pointer"
+              >
+                <div className="text-4xl">{problem.emoji}</div>
+
+                <h3 className="mt-4 text-xl font-bold">
+                  {problem.title}
+                </h3>
+
+                <p className="mt-2 text-slate-600">
+                  {problem.text}
+                </p>
+
+                <p className="mt-4 text-sm font-medium text-purple-600">
+                  {isOpen
+                    ? "Masquer les conseils ↑"
+                    : "Voir comment Klero aide ↓"}
+                </p>
+              </div>
+
+              {isOpen && (
+                <div className="mt-6 border-t border-purple-100 pt-6">
+                  <h4 className="font-semibold text-purple-700">
                     Comment Klero aide
-                  </h3>
+                  </h4>
 
                   <ul className="mt-4 space-y-3 text-slate-600">
                     {problem.help.map((item) => (
                       <li key={item}>✨ {item}</li>
                     ))}
                   </ul>
-
-                  <p className="mt-6 text-sm font-medium text-purple-600">
-                    Revenir
-                  </p>
-                </>
+                </div>
               )}
-            </button>
+            </div>
           );
         })}
       </div>

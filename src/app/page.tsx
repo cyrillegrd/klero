@@ -9,6 +9,8 @@ import Beta from "../components/Beta";
 import Footer from "../components/Footer";
 import HowItWorks from "../components/HowItWorks";
 import WhyKlero from "../components/WhyKlero";
+import CompanionsDetails from "../components/CompanionsDetails";
+import Roadmap from "../components/Roadmap";
 
 export default function Home() {
   return (
@@ -20,7 +22,9 @@ export default function Home() {
       <Problems />
       <Refuge />
       <Companions />
+      <CompanionsDetails />
       <WhyKlero />
+      <Roadmap />
       <FAQ />
       <Beta />
       <Footer />
