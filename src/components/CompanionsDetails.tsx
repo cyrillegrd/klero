@@ -7,8 +7,7 @@ const companions = [
     emoji: "🦕",
     name: "Bronto",
     role: "Le calme",
-    description:
-      "Quand ton cerveau va trop vite et que les pensées s'accumulent.",
+    description: "Quand ton cerveau va trop vite et que les pensées s'accumulent.",
     skills: [
       "🌬️ Exercices de respiration",
       "🌿 Retour au calme",
@@ -19,8 +18,7 @@ const companions = [
     emoji: "🌙",
     name: "Céra",
     role: "La bienveillance",
-    description:
-      "Quand la culpabilité prend trop de place.",
+    description: "Quand la culpabilité prend trop de place.",
     skills: [
       "💜 Messages bienveillants",
       "🌸 Auto-compassion",
@@ -31,8 +29,7 @@ const companions = [
     emoji: "⭐",
     name: "Tyna",
     role: "L'organisation",
-    description:
-      "Quand tu ne sais plus par où commencer.",
+    description: "Quand tu ne sais plus par où commencer.",
     skills: [
       "🧭 Clarifier les priorités",
       "📋 Organiser les idées",
@@ -43,8 +40,7 @@ const companions = [
     emoji: "⚡",
     name: "Ptéra",
     role: "L'énergie",
-    description:
-      "Quand tu as besoin d'un coup de pouce pour avancer.",
+    description: "Quand tu as besoin d'un coup de pouce pour avancer.",
     skills: [
       "🔋 Motivation douce",
       "🎉 Célébration des progrès",
@@ -72,6 +68,7 @@ export default function CompanionsDetails() {
         {companions.map((companion) => (
           <button
             key={companion.name}
+            type="button"
             onClick={() => setSelected(companion)}
             className={`rounded-3xl p-6 text-center transition ${
               selected.name === companion.name
@@ -81,13 +78,9 @@ export default function CompanionsDetails() {
           >
             <div className="text-5xl">{companion.emoji}</div>
 
-            <h3 className="mt-4 text-xl font-bold">
-              {companion.name}
-            </h3>
+            <h3 className="mt-4 text-xl font-bold">{companion.name}</h3>
 
-            <p className="mt-1 text-sm">
-              {companion.role}
-            </p>
+            <p className="mt-1 text-sm">{companion.role}</p>
           </button>
         ))}
       </div>
@@ -97,19 +90,12 @@ export default function CompanionsDetails() {
           <div className="text-6xl">{selected.emoji}</div>
 
           <div>
-            <h3 className="text-3xl font-bold">
-              {selected.name}
-            </h3>
-
-            <p className="text-purple-600">
-              {selected.role}
-            </p>
+            <h3 className="text-3xl font-bold">{selected.name}</h3>
+            <p className="text-purple-600">{selected.role}</p>
           </div>
         </div>
 
-        <p className="mt-6 text-lg text-slate-600">
-          {selected.description}
-        </p>
+        <p className="mt-6 text-lg text-slate-600">{selected.description}</p>
 
         <div className="mt-8">
           <h4 className="font-semibold text-purple-700">
