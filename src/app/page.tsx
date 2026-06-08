@@ -7,6 +7,8 @@ import Companions from "../components/Companions";
 import FAQ from "../components/FAQ";
 import Beta from "../components/Beta";
 import Footer from "../components/Footer";
+import HowItWorks from "../components/HowItWorks";
+import WhyKlero from "../components/WhyKlero";
 
 export default function Home() {
   return (
@@ -14,9 +16,11 @@ export default function Home() {
       <BackgroundBlobs />
       <Navbar />
       <Hero />
+      <HowItWorks />
       <Problems />
       <Refuge />
       <Companions />
+      <WhyKlero />
       <FAQ />
       <Beta />
       <Footer />

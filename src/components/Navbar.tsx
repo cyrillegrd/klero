@@ -15,9 +15,12 @@ export default function Navbar() {
 </a>
 
         <div className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-          <a href="#app">L'app</a>
+          <a href="#how">Comment ça marche</a>
+          <a href="#app">Les défis</a>
           <a href="#refuge">Le refuge</a>
           <a href="#compagnons">Les compagnons</a>
+          <a href="/blog">Blog</a>
+          <a href="/about">À propos</a>
         </div>
 
         <a
